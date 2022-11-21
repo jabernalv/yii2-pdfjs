@@ -1,6 +1,9 @@
 <?php
 use yii\web\View;
 
+/* @var $waterMark array */
+/* @var $buttons array */
+
 $js = '';
 foreach ($buttons as $btn => $value) {
   if($value === false){
@@ -16,7 +19,6 @@ var WATERMARK_TEXT_COLOR = '".$waterMark['color']."';
 $this->registerJs($pdjsConfig,View::POS_HEAD);
 $this->registerJs($js);
  ?>
-
  <div id="outerContainer">
    <div id="sidebarContainer">
      <div id="toolbarSidebar">

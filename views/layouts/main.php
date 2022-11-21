@@ -4,7 +4,7 @@
 use yii\helpers\Html;
 use yii\web\View;
 use yii\helpers\Url;
-use yii2assets\pdfjs\PdfJsAsset;
+use jabernal\pdfjs\PdfJsAsset;
 $bundle = PdfJsAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -40,7 +40,7 @@ See https://github.com/adobe-type-tools/cmap-resources
     <!-- This snippet is used in production (included from viewer.html) -->
     <link rel="resource" type="application/l10n" href="<?=$bundle->baseUrl?>/web/locale/locale.properties"/>
     <script type="text/javascript">
-    var WORKER_URL = "<?=$bundle->baseUrl?>/build/pdf.worker.js";
+        const WORKER_URL = "<?=$bundle->baseUrl?>/build/pdf.worker.js";
     </script>
 <?php $this->head() ?>
 </head>

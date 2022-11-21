@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2assets\pdfjs;
+namespace jabernal\pdfjs;
 
 use yii\web\AssetBundle;
 use yii\web\View;
@@ -9,24 +9,24 @@ use yii\web\View;
  * PdfJs Asset bundle
  * @author Sathit Seethaphon <dixonsatit@gmail.com>
  */
-class PdfJsAsset extends AssetBundle
-{
-    public $sourcePath = '@yii2assets/pdfjs/assets';
+class PdfJsAsset extends AssetBundle {
+    public $sourcePath = '@jabernal/pdfjs/assets';
 
     public $js = [
-        'web/compatibility.js',
-        'web/l10n.js',
         'build/pdf.js',
-        'web/debugger.js',
+        'build/pdf.worker.js',
+        ['web/debugger.js', 'type' => 'module'],
         'web/viewer.js'
     ];
 
-    public $jsOptions  = [
-      'position'=> View::POS_HEAD
+    public $jsOptions = [
+        'position' => View::POS_HEAD
     ];
 
     public $css = [
-        'web/viewer.css'
+        'web/viewer.css',
+        //'web/debugger.css'
     ];
 }
- ?>
+
+?>

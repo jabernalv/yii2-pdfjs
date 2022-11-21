@@ -1,30 +1,37 @@
 <?php
+
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
-$url =  Url::to(['/pdfjs','file'=>Url::to($url)]);
+
+/* @var $id string */
+/* @var $url string */
+/* @var $buttons array */
+/* @var $options array */
+
+$url = Url::to(['/pdfjs', 'file' => Url::to($url)]);
 $this->registerJs('
-  $("#pdfjs-form-'.$id.'").submit();
-  $("#pdfjs-'.$id.'").css("background-color","#404040");
+  $("#pdfjs-form-' . $id . '").submit();
+  $("#pdfjs-' . $id . '").css("background-color","#404040");
 ');
 ?>
 
 <?php $form = ActiveForm::begin([
-    'id'=>'pdfjs-form-'.$id,
+    'id' => 'pdfjs-form-' . $id,
     'options' => [
-      'class' => 'form-horizontal',
-      'target'=> 'pdfjs-'.$id
+        'class' => 'form-horizontal',
+        'target' => 'pdfjs-' . $id
     ],
-    'action'=>$url
+    'action' => $url
 ]) ?>
-<?php foreach ($buttons as $btn => $value):?>
-<?= $value == false ? Html::hiddenInput($btn,0) : null;?>
+<?php foreach ($buttons as $btn => $value): ?>
+    <?= $value == false ? Html::hiddenInput($btn, 0) : null; ?>
 <?php endforeach; ?>
 <?php ActiveForm::end() ?>
 
- <?= Html::tag('iframe','',ArrayHelper::merge([
-        'id'=>'pdfjs-'.$id,
-        'name'=>'pdfjs-'.$id
-     ],$options));
-  ?>
+<?= Html::tag('iframe allowfullscreen webkitallowfullscreen', '', ArrayHelper::merge([
+    'id' => 'pdfjs-' . $id,
+    'name' => 'pdfjs-' . $id
+], $options));
+?>
