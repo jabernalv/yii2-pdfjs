@@ -11,7 +11,7 @@ function PDFJSIframeform(url) {
     }
 
     object.send = function () {
-        var iframe = $('<iframe data-time="' + object.time + '" style="display:none;" id="iframe' + object.time + '"></iframe>');
+        const iframe = $('<iframe data-time="' + object.time + '" style="display:none;" id="iframe' + object.time + '"></iframe>');
         $("body").append(iframe);
         $("body").append(object.form);
         object.form.submit();

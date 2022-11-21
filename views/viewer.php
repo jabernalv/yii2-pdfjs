@@ -21,7 +21,7 @@ $this->registerJs('
     'id' => 'pdfjs-form-' . $id,
     'options' => [
         'class' => 'form-horizontal',
-        'target' => 'pdfjs-' . $id
+        'target' => 'pdfjs-' . $id,
     ],
     'action' => $url
 ]) ?>

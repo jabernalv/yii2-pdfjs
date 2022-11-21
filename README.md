@@ -1,6 +1,6 @@
 Yii2 PDFJS
 ==========
-[![Latest Stable Version](https://poser.pugx.org/jabernal/yii2-pdfjs/v/stable)](https://packagist.org/packages/jabernal/yii2-pdfjs) [![Total Downloads](https://poser.pugx.org/jabernal/yii2-pdfjs/downloads)](https://packagist.org/packages/jabernal/yii2-pdfjs) [![Latest Unstable Version](https://poser.pugx.org/jabernal/yii2-pdfjs/v/unstable)](https://packagist.org/packages/jabernal/yii2-pdfjs) [![License](https://poser.pugx.org/jabernal/yii2-pdfjs/license)](https://packagist.org/packages/jabernal/yii2-pdfjs) [![composer.lock](https://poser.pugx.org/jabernal/yii2-pdfjs/composerlock)](https://packagist.org/packages/jabernal/yii2-pdfjs)
+[![Latest Stable Version](https://poser.pugx.org/yii2assets/yii2-pdfjs/v/stable)](https://packagist.org/packages/yii2assets/yii2-pdfjs) [![Total Downloads](https://poser.pugx.org/yii2assets/yii2-pdfjs/downloads)](https://packagist.org/packages/yii2assets/yii2-pdfjs) [![Latest Unstable Version](https://poser.pugx.org/yii2assets/yii2-pdfjs/v/unstable)](https://packagist.org/packages/yii2assets/yii2-pdfjs) [![License](https://poser.pugx.org/yii2assets/yii2-pdfjs/license)](https://packagist.org/packages/yii2assets/yii2-pdfjs) [![composer.lock](https://poser.pugx.org/yii2assets/yii2-pdfjs/composerlock)](https://packagist.org/packages/yii2assets/yii2-pdfjs)
 
 Yii2 PDFJS bundle of [PDF.js](https://mozilla.github.io/pdf.js/) plugin. PDF.js Portable Document Format (PDF) viewer.
 
@@ -12,13 +12,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer require --prefer-dist jabernal/yii2-pdfjs ">=1.0"
+php composer require --prefer-dist yii2assets/yii2-pdfjs ">=1.0"
 ```
 
 or add
 
 ```
-"jabernal/yii2-pdfjs": ">=1.0"
+"yii2assets/yii2-pdfjs": ">=1.0"
 ```
 
 to the require section of your `composer.json` file.
@@ -32,7 +32,7 @@ The extension has been created as a module to enable access preview `pdf` file. 
 
 'modules'=>[
   'pdfjs' => [
-       'class' => '\jabernal\pdfjs\Module',
+       'class' => '\yii2assets\pdfjs\Module',
    ],
 ],
 
@@ -51,7 +51,7 @@ Once the extension is installed, simply use it in your code by  :
 use yii\helpers\Url;
 ?>
 
-<?= \jabernal\pdfjs\PdfJs::widget([
+<?= \yii2assets\pdfjs\PdfJs::widget([
   'url'=> Url::base().'/downloads/manualStart_up.pdf'
 ]); ?>
 ```
@@ -70,7 +70,7 @@ Modal::begin([
     'toggleButton' => ['label' => 'click me'],
 ]);
 
-echo \jabernal\pdfjs\PdfJs::widget([
+echo \yii2assets\pdfjs\PdfJs::widget([
   'url' => Url::base().'/downloads/manualStart_up.pdf'
 ]);
 
@@ -95,7 +95,7 @@ Config Width & Height
 use yii\helpers\Url;
 ?>
 
-<?= \jabernal\pdfjs\PdfJs::widget([
+<?= \yii2assets\pdfjs\PdfJs::widget([
   'width'=>'100%',
   'height'=> '500px',
   'url'=> Url::base().'/downloads/pdfjs.pdf'
@@ -112,7 +112,7 @@ Config disable toolbar buttons
 use yii\helpers\Url;
 ?>
 
-<?= \jabernal\pdfjs\PdfJs::widget([
+<?= \yii2assets\pdfjs\PdfJs::widget([
   'url'=> Url::base().'/downloads/pdfjs.pdf',
   'buttons'=>[
     'presentationMode' => false,
@@ -135,7 +135,7 @@ Add Watermark text
 
 'modules'=>[
   'pdfjs' => [
-       'class' => '\jabernal\pdfjs\Module',
+       'class' => '\yii2assets\pdfjs\Module',
        'waterMark'=>[
          'text'=>' Yii2 PDF.JS',
          'color'=> 'red',
